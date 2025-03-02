@@ -1,0 +1,6 @@
+smolagents~=1.9.2
+pydantic~=2.10.6
+fastapi~=0.115.8
+python-dotenv~=1.0.1
+pymongo~=4.11.1
+litellm~=1.61.8
