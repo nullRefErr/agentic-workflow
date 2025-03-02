@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="853118d8-f694-45d4-a927-df31f718b200" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/user_input.py" afterDir="false" />
+    <list default="true" id="853118d8-f694-45d4-a927-df31f718b200" name="Changes" comment="agentic workflow added">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +154,7 @@
       <workItem from="1740913048173" duration="11000" />
       <workItem from="1740913060903" duration="74000" />
       <workItem from="1740913152925" duration="41000" />
-      <workItem from="1740913201813" duration="1864000" />
+      <workItem from="1740913201813" duration="2949000" />
     </task>
     <task id="LOCAL-00001" summary="agents added">
       <option name="closed" value="true" />

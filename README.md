@@ -66,7 +66,7 @@ Upcoming features planned for `agentic-workflow`:
 
 ## Workflow Schema
 
-![Agentic Workflow Screenshot](assets/screenshot.png)
+![Agentic Workflow Screenshot](agentic_workflow.png)
 
 ## Technologies Used
 
