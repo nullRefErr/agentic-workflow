@@ -25,6 +25,10 @@ def get_trust_score(user_id):
     return {"trust_score": db.get_trust_score(user_id)}
 
 
+def get_trust_score_by_phone(phone):
+    return {"trust_score": db.get_trust_score_by_phone(phone)}
+
+
 def block_number(user_id, phone_number):
     user = db.get_user_by_id(user_id)
 

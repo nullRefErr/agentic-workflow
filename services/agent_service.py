@@ -3,7 +3,7 @@ from models.user_input import ChatbotPrompt
 from services.ai_helper_service import translator_helper, stemma_helper, response_helper
 
 
-def run_agent(data: ChatbotPrompt):
+def run_agent(data: ChatbotPrompt, user_id: str):
     # Get Agents
     agent = get_agent()
 
@@ -11,7 +11,7 @@ def run_agent(data: ChatbotPrompt):
     translate = translator_helper(data.input)
 
     # Find possible agent functions to run and create a new plain prompt which can be undestood by the agent
-    new_agent_prompt = stemma_helper(translate)
+    new_agent_prompt = stemma_helper(translate, user_id)
 
     # Run agents to do the job and get response
     agent_response = agent.run(new_agent_prompt)

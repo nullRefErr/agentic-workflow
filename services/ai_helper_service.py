@@ -24,106 +24,36 @@ def translator_helper(content: str) -> str:
     return response.choices[0].message.content
 
 
-def stemma_helper(content: str) -> str:
+def stemma_helper(content: str, user_id: str) -> str:
     response = completion(
         model="openai/gpt-4o-mini",
         temperature=0,
         api_key=os.getenv("OPENAI_API_KEY"),
         messages=[
-            {"content": """
-    get_user_info_by_phone(phone: str) -> dict[str, str, str, str]:
-        Get the current user from database by phone number.
-        Args:
-            phone: Given phone number to get the user info from database.
-        Returns:
-            name: Name of the user with the given phone number.
-            email: Email of the user with the given phone number.
-            phone: Phone number of the user.
-            id: id of the user with the given phone number.
-            
-    get_user_info_by_id(id: str) -> dict[str, str, str]:
-        Get the current user from database by id.
-        Args:
-            id: Given user id to get the user info from database.
-        Returns:
-            name: Name of the user with the given phone number.
-            email: Email of the user with the given phone number.
-            phone: Phone number of the user.
-            
-    get_premium_status(id: str) -> dict[str]:
-        Get the current user's premium status from database by id.
-        Args:
-            id: Given id to get the user info from database.
-        Returns:
-            status: User's premium status PREMIUM or IDLE or NONE
-    
-    get_trust_score_by_id(id: str) -> dict[int]:
-        Search given user_id for their Trust Scores before doing business with someone! Our artificial intelligence technology is powered by the latest user feedback, spam activities and dozens of different algorithms, and we calculate a trust score for each phone number using this technology. Returns how much you can trust the user and how viable are they.
-        Args:
-            id: Given id to get the user info from database.
-        Returns:
-            trust_score: Integer value to describe User's performance
-    
-    block_number_by_id(id: str, phoneNumber: str) -> str:
-        Blocks numbers to call or message to the user.
-        Args:
-            id: this is the user id who wants to block given phone number.
-            phoneNumber: Given phone number to block by id.
-        Returns:
-            A string message to describe the result of the action.
-            
-    send_chat_message(id: str, phone: str, message: str) -> str:
-        Sends messages to a given user phone number with user_id.
-        Args:
-            agent: Name of the agent.
-            id: id of the sender who wants to send message to a phone number. This should be like uuid.
-            phone: Phone number of the receiver.
-            message: Message to be sent.
-        Returns:
-            str: Message sent.
-    
-    researcher(context: str) -> str:
-        knowledgebase. Finds anything and researches it for you.
-        Args:
-            context: the subject which will be explained.
-        Returns:
-            str: subject explanation.
+            {"content": f"""
+    User Input: {content}
+    ---------------------------
+    System Function:
+    get_user_info_by_phone(phone: str): Get the current user from database by phone number.
+    get_user_info_by_id(id: str): Get the current user from database by id.
+    get_premium_status(id: str): Get the current user's premium status from database by id.
+    get_trust_score_by_id(id: str): Search given user_id for their Trust Scores before doing business with someone! Our artificial intelligence technology is powered by the latest user feedback, spam activities and dozens of different algorithms, and we calculate a trust score for each phone number using this technology. Returns how much you can trust the user and how viable are they.
+    block_number_by_id(id: str, phoneNumber: str): Blocks numbers to call or message to the user.
+    send_chat_message(id: str, phone: str, message: str): Sends messages to a given user phone number with user_id.
+    researcher(context: str): knowledgebase. Finds anything and researches it for you.
+    ----------------------------------
+    I have this tool set, I want you to find what user would like to do according to this functions
+    add mathing possible function list without parameters at the end of the given input
+    do not add if there is no mathing possible function list at the end of the given input
+    add original input to your answer. if no mathing possible function list found just say #NONE#
+    add mathing possible function list without parameters at the end of the given input
+    add generata human-like responses command to your responses
+    add 'my id:{user_id}' at the end of the response
+    IMPORTANT: Do not answer the questions. do not generate response. just find functions that can be used with the given input. 
             """, "role": "system"},
-            {
-                "content": "I have this tool set, I want you to find what user would like to do according to this functions",
-                "role": "system"
-            },
-            {
-                "content": "add mathing possible function list without parameters at the end of the given input",
-                "role": "system"
-            },
-            {
-                "content": "do not add if there is no mathing possible function list at the end of the given input",
-                "role": "system"
-            },
-            {
-                "content": "do not answer the question add original input to your answer",
-                "role": "system"
-            },
-            {
-                "content": "add my id at the end of the given input",
-                "role": "system"
-            },
-            {
-                "content": "my id is ddf73652-052f-469f-94a8-79f83b8627e6",
-                "role": "system"
-            },
-            {
-                "content": "if trust score is less than 50 it is not viable",
-                "role": "system"
-            },
             {
                 "content": "add generata human-like responses command to your responses",
                 "role": "system"
-            },
-            {
-                "content": content,
-                "role": "user"
             }
         ]
     )

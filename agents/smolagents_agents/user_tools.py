@@ -1,6 +1,6 @@
 from smolagents import tool
 
-from services.user_service import get_phone_number_info, get_id_info, get_status, get_trust_score, block_number
+from services.user_service import get_phone_number_info, get_id_info, get_status, get_trust_score, block_number, get_trust_score_by_phone
 
 
 @tool
@@ -66,6 +66,21 @@ def get_trust_score_by_id(id: str) -> dict[int]:
         trust_score: Integer value to describe User's performance
     """
     result = get_trust_score(id)
+    return result
+
+
+@tool
+def get_trust_score_phone(phone: str) -> dict[int]:
+    """
+    Search for their Trust Scores. Returns how much you can trust the user and how viable are they.
+
+    Args:
+        phone: Given phone to get the user info from database.
+
+    Returns:
+        trust_score: Integer value to describe User's performance
+    """
+    result = get_trust_score_by_phone(phone)
     return result
 
 

@@ -179,6 +179,11 @@ def get_trust_score(_id: str):
     return user["trust_score"]
 
 
+def get_trust_score_by_phone(phone: str):
+    user = user_collection.find_one({"phone": phone})
+    return user["trust_score"]
+
+
 def get_status(_id: str):
     user = user_collection.find_one({"_id": _id})
     return user["premium_status"]
