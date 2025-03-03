@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="853118d8-f694-45d4-a927-df31f718b200" name="Changes" comment="agentic workflow added">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="853118d8-f694-45d4-a927-df31f718b200" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +153,7 @@
       <workItem from="1740913048173" duration="11000" />
       <workItem from="1740913060903" duration="74000" />
       <workItem from="1740913152925" duration="41000" />
-      <workItem from="1740913201813" duration="2949000" />
+      <workItem from="1740913201813" duration="5209000" />
     </task>
     <task id="LOCAL-00001" summary="agents added">
       <option name="closed" value="true" />
@@ -196,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740752553215</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="schema added">
+      <option name="closed" value="true" />
+      <created>1740917922477</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740917922477</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +212,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="agents added" />
     <MESSAGE value="agentic workflow added" />
-    <option name="LAST_COMMIT_MESSAGE" value="agentic workflow added" />
+    <MESSAGE value="schema added" />
+    <option name="LAST_COMMIT_MESSAGE" value="schema added" />
   </component>
 </project>
