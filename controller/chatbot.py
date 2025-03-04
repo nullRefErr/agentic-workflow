@@ -3,4 +3,4 @@ from services import agent_service
 
 
 def chatbot_agent(data: ChatbotPrompt, user_id: str):
-    return agent_service.run_agent(data, user_id)
+    return agent_service.agent(data, user_id)

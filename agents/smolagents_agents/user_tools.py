@@ -1,6 +1,7 @@
 from smolagents import tool
 
-from services.user_service import get_phone_number_info, get_id_info, get_status, get_trust_score, block_number, get_trust_score_by_phone
+from services.user_service import get_phone_number_info, get_id_info, get_status, get_trust_score, block_number, \
+    get_trust_score_by_phone
 
 
 @tool
